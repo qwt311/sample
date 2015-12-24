@@ -1,6 +1,7 @@
 package blade.sample.route;
 
 import blade.kit.json.JsonObject;
+import blade.sample.model.Person;
 
 import com.blade.web.http.Request;
 import com.blade.web.http.Response;
@@ -16,10 +17,16 @@ public class NormalSample {
 	
 	public void saveUser(Request request, Response response){
 		System.out.println("进入saveUser~");
+		
+		// test request.model()
+		Person person = request.model("person", Person.class);
+		System.out.println(person);
+				
 		// save操作
 		JsonObject res = new JsonObject();
 		res.add("status", 200);
 		response.json(res.toString());
+		
 	}
 	
 	public void deleteUser(Request request, Response response){

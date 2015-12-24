@@ -2,9 +2,11 @@ package blade.sample;
 
 import blade.kit.log.Logger;
 import blade.sample.route.NormalSample;
+import blade.sample.service.impl.BBBService;
 
 import com.blade.Blade;
 import com.blade.Bootstrap;
+import com.blade.annotation.Inject;
 import com.blade.route.RouteHandler;
 import com.blade.web.http.HttpMethod;
 import com.blade.web.http.Request;
@@ -13,6 +15,13 @@ import com.blade.web.http.Response;
 public class App extends Bootstrap{
 
 	Logger logger = Logger.getLogger(App.class);
+	
+	@Inject
+	BBBService bbbService;
+	
+	public void contextInitialized(Blade blade) {
+		bbbService.save();
+	};
 	
 	@Override
 	public void init(Blade blade) {
