@@ -18,6 +18,7 @@ public class App extends Bootstrap{
 	public void init(Blade blade) {
 		
 		// 设置路由、拦截器包所在包
+		blade.isDev(true);
 		blade.routes("blade.sample.route").interceptor("blade.sample.interceptor")
 			 // 设置要扫描的ioc包，可选
 			.ioc("blade.sample.service.impl.*")
