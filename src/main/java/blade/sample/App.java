@@ -2,11 +2,9 @@ package blade.sample;
 
 import blade.kit.log.Logger;
 import blade.sample.route.NormalSample;
-import blade.sample.service.impl.BBBService;
 
 import com.blade.Blade;
 import com.blade.Bootstrap;
-import com.blade.annotation.Inject;
 import com.blade.route.RouteHandler;
 import com.blade.web.http.HttpMethod;
 import com.blade.web.http.Request;
@@ -16,20 +14,13 @@ public class App extends Bootstrap{
 
 	Logger logger = Logger.getLogger(App.class);
 	
-	@Inject
-	BBBService bbbService;
-	
-	public void contextInitialized(Blade blade) {
-		bbbService.save();
-	};
-	
 	@Override
 	public void init(Blade blade) {
 		
 		// 设置路由、拦截器包所在包
 		blade.routes("blade.sample.route").interceptor("blade.sample.interceptor")
 			 // 设置要扫描的ioc包，可选
-			.ioc("blade.sample.service.*")
+			.ioc("blade.sample.service.impl.*")
 			.view("/WEB-INF/views/", ".jsp")
 			.staticFolder("/static");
 		

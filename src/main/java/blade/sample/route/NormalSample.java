@@ -9,7 +9,7 @@ import com.blade.web.multipart.FileItem;
 
 public class NormalSample {
 	
-	public String hello(Request request, Response response){
+	public String hello(Response response, Request request){
 		System.out.println("进入hello~");
 		request.attribute("name", "rose baby");
 		return "hi";
