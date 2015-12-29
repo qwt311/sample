@@ -41,16 +41,17 @@ public class AnnotationSample {
 	}
 
 	@Route("/index")
-	public void index(Response response) {
-		ModelAndView modelAndView = new ModelAndView("/index.jsp");
+	public void index(Request request, Response response) {
+		ModelAndView modelAndView = new ModelAndView("index.jsp");
 		modelAndView.add("name", "jack");
+		System.out.println(request.queryAsInt("test"));
 		response.render(modelAndView);
 	}
 	
 	
 	@Route("/you/:username")
 	public void you(Request request, Response response) {
-		ModelAndView modelAndView = new ModelAndView("/you.html");
+		ModelAndView modelAndView = new ModelAndView("you.html");
 		modelAndView.add("username", request.param("username"));
 		response.render(modelAndView);
 	}
