@@ -1,17 +1,26 @@
 package blade.sample.interceptor;
 
-import com.blade.annotation.After;
-import com.blade.annotation.Interceptor;
-import com.blade.web.http.Request;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-@Interceptor
-public class BaseInterceptor {
+import com.blade.interceptor.Interceptor;
+import com.blade.web.http.Request;
+import com.blade.web.http.Response;
+
+public class BaseInterceptor implements Interceptor {
+
+	private static final Logger LOGGER = LoggerFactory.getLogger(BaseInterceptor.class);
 	
-	@After("/.*")
-	public void after(Request request){
-		// 设置context path
-		request.attribute("ctx", request.contextPath());
-		
-		System.out.println("after...");
+	@Override
+	public boolean before(Request request, Response response) {
+		LOGGER.info("beofre ///");
+		return true;
 	}
+	
+	@Override
+	public boolean after(Request request, Response response) {
+		LOGGER.info("after ///");
+		return true;
+	}
+	
 }

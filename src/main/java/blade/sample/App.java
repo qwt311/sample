@@ -1,7 +1,7 @@
 package blade.sample;
 
-import blade.kit.log.Logger;
-import blade.sample.route.NormalSample;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.blade.Blade;
 import com.blade.Bootstrap;
@@ -10,20 +10,18 @@ import com.blade.web.http.HttpMethod;
 import com.blade.web.http.Request;
 import com.blade.web.http.Response;
 
+import blade.sample.controller.NormalSample;
+
 public class App extends Bootstrap{
 
-	Logger logger = Logger.getLogger(App.class);
+	Logger logger = LoggerFactory.getLogger(App.class);
 	
 	@Override
 	public void init(Blade blade) {
 		
 		// 设置路由、拦截器包所在包
-		blade.isDev(true);
-		blade.routes("blade.sample.route").interceptor("blade.sample.interceptor")
-			 // 设置要扫描的ioc包，可选
-			.ioc("blade.sample.service.impl.*")
-			.view("/WEB-INF/views/", ".jsp")
-			.staticFolder("/static");
+//		blade.isDev(true);
+		blade.basePackage("blade.sample");
 		
 		// 函数式路由
 		blade.route("/hello", NormalSample.class, "hello");

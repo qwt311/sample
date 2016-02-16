@@ -1,11 +1,11 @@
-package blade.sample.route;
-
-import blade.kit.json.JsonObject;
-import blade.sample.model.Person;
+package blade.sample.controller;
 
 import com.blade.web.http.Request;
 import com.blade.web.http.Response;
 import com.blade.web.multipart.FileItem;
+
+import blade.kit.json.JSONObject;
+import blade.sample.model.Person;
 
 public class NormalSample {
 	
@@ -23,8 +23,8 @@ public class NormalSample {
 		System.out.println(person);
 				
 		// save操作
-		JsonObject res = new JsonObject();
-		res.add("status", 200);
+		JSONObject res = new JSONObject();
+		res.put("status", 200);
 		response.json(res.toString());
 		
 	}
@@ -32,8 +32,8 @@ public class NormalSample {
 	public void deleteUser(Request request, Response response){
 		System.out.println("进入deleteUser~");
 		// delete操作
-		JsonObject res = new JsonObject();
-		res.add("status", 200);
+		JSONObject res = new JSONObject();
+		res.put("status", 200);
 		response.json(res.toString());
 	}
 	

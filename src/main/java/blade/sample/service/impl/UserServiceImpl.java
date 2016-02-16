@@ -1,6 +1,6 @@
 package blade.sample.service.impl;
 
-import com.blade.annotation.Component;
+import com.blade.ioc.annotation.Component;
 
 import blade.sample.service.UserService;
 

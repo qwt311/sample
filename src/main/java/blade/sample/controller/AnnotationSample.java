@@ -1,14 +1,14 @@
-package blade.sample.route;
+package blade.sample.controller;
 
-import blade.sample.service.UserService;
-
-import com.blade.annotation.Inject;
-import com.blade.annotation.Path;
-import com.blade.annotation.Route;
-import com.blade.render.ModelAndView;
+import com.blade.ioc.annotation.Inject;
+import com.blade.route.annotation.Path;
+import com.blade.route.annotation.Route;
+import com.blade.view.template.ModelAndView;
 import com.blade.web.http.HttpMethod;
 import com.blade.web.http.Request;
 import com.blade.web.http.Response;
+
+import blade.sample.service.UserService;
 
 @Path
 public class AnnotationSample {
