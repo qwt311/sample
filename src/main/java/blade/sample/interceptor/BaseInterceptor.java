@@ -13,13 +13,13 @@ public class BaseInterceptor implements Interceptor {
 	
 	@Override
 	public boolean before(Request request, Response response) {
-		LOGGER.info("beofre ///");
+		LOGGER.info("beofre ...");
 		return true;
 	}
 	
 	@Override
 	public boolean after(Request request, Response response) {
-		LOGGER.info("after ///");
+		LOGGER.info("after ...");
 		return true;
 	}
 	

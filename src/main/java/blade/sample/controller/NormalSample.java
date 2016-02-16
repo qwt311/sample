@@ -1,5 +1,9 @@
 package blade.sample.controller;
 
+import org.slf4j.LoggerFactory;
+
+import org.slf4j.Logger;
+
 import com.blade.web.http.Request;
 import com.blade.web.http.Response;
 import com.blade.web.multipart.FileItem;
@@ -9,8 +13,10 @@ import blade.sample.model.Person;
 
 public class NormalSample {
 	
+	private static final Logger LOGGER = LoggerFactory.getLogger(NormalSample.class);
+	
 	public String hello(Response response, Request request){
-		System.out.println("进入hello~");
+		LOGGER.info("进入hello~");
 		request.attribute("name", "rose baby");
 		return "hi";
 	}
@@ -38,7 +44,9 @@ public class NormalSample {
 	}
 	
 	public void saveImg(Request request, Response response){
-		System.out.println("进入saveImg~");
+		
+		LOGGER.info("进入saveImg~");
+		
 		FileItem[] fileItems = request.files();
 		if(null != fileItems && fileItems.length > 0){
 			FileItem fileItem = fileItems[0];

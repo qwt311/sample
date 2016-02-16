@@ -19,8 +19,6 @@ public class App extends Bootstrap{
 	@Override
 	public void init(Blade blade) {
 		
-		// 设置路由、拦截器包所在包
-//		blade.isDev(true);
 		blade.basePackage("blade.sample");
 		
 		// 函数式路由

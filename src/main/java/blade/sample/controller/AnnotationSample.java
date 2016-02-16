@@ -1,5 +1,8 @@
 package blade.sample.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.blade.ioc.annotation.Inject;
 import com.blade.route.annotation.Path;
 import com.blade.route.annotation.Route;
@@ -13,12 +16,14 @@ import blade.sample.service.UserService;
 @Path
 public class AnnotationSample {
 	
+	private static final Logger LOGGER = LoggerFactory.getLogger(AnnotationSample.class);
+	
 	@Inject
 	UserService userService;
 	
 	@Route(value = "/post", method = HttpMethod.POST)
 	public void post() {
-		System.out.println("post");
+		LOGGER.info("request POST");
 	}
 	
 	@Route(value = "/post", method = HttpMethod.GET)
@@ -28,23 +33,32 @@ public class AnnotationSample {
 	
 	@Route("/rock/:id")
 	public void rock2() {
-		System.out.println("rock2");
+		LOGGER.info("request rock2");
 	}
 	
 	@Route("/users/:name")
 	public void users(Request request, Response response) {
-		System.out.println("users");
+		
+		LOGGER.info("request users");
+		
 		String name = request.param("name");
-		System.out.println("name = " + name);
+		
+		LOGGER.info("param name = {}", name);
+		
 		request.attribute("name", name);
 		response.render("/users.jsp");
 	}
 
 	@Route("/index")
 	public void index(Request request, Response response) {
+		
+		userService.sayHello();
+		
 		ModelAndView modelAndView = new ModelAndView("index.jsp");
 		modelAndView.add("name", "jack");
-		System.out.println(request.queryAsInt("test"));
+		
+		LOGGER.info("param test = {}", request.queryAsInt("test"));
+		
 		response.render(modelAndView);
 	}
 	
