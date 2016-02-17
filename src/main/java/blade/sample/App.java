@@ -1,8 +1,5 @@
 package blade.sample;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.blade.Blade;
 import com.blade.Bootstrap;
 import com.blade.route.RouteHandler;
@@ -10,6 +7,8 @@ import com.blade.web.http.HttpMethod;
 import com.blade.web.http.Request;
 import com.blade.web.http.Response;
 
+import blade.kit.logging.Logger;
+import blade.kit.logging.LoggerFactory;
 import blade.sample.controller.NormalSample;
 
 public class App extends Bootstrap{

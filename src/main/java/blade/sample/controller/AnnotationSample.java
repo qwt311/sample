@@ -1,8 +1,5 @@
 package blade.sample.controller;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.blade.ioc.annotation.Inject;
 import com.blade.route.annotation.Path;
 import com.blade.route.annotation.Route;
@@ -11,6 +8,8 @@ import com.blade.web.http.HttpMethod;
 import com.blade.web.http.Request;
 import com.blade.web.http.Response;
 
+import blade.kit.logging.Logger;
+import blade.kit.logging.LoggerFactory;
 import blade.sample.service.UserService;
 
 @Path

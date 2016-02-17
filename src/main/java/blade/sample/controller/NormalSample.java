@@ -1,14 +1,12 @@
 package blade.sample.controller;
 
-import org.slf4j.LoggerFactory;
-
-import org.slf4j.Logger;
-
 import com.blade.web.http.Request;
 import com.blade.web.http.Response;
 import com.blade.web.multipart.FileItem;
 
 import blade.kit.json.JSONObject;
+import blade.kit.logging.Logger;
+import blade.kit.logging.LoggerFactory;
 import blade.sample.model.Person;
 
 public class NormalSample {

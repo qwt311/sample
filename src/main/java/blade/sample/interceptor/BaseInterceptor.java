@@ -1,11 +1,11 @@
 package blade.sample.interceptor;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.blade.interceptor.Interceptor;
 import com.blade.web.http.Request;
 import com.blade.web.http.Response;
+
+import blade.kit.logging.Logger;
+import blade.kit.logging.LoggerFactory;
 
 public class BaseInterceptor implements Interceptor {
 
