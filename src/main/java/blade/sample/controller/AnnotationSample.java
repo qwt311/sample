@@ -3,7 +3,7 @@ package blade.sample.controller;
 import com.blade.ioc.annotation.Inject;
 import com.blade.route.annotation.Path;
 import com.blade.route.annotation.Route;
-import com.blade.view.template.ModelAndView;
+import com.blade.view.ModelAndView;
 import com.blade.web.http.HttpMethod;
 import com.blade.web.http.Request;
 import com.blade.web.http.Response;
@@ -25,48 +25,34 @@ public class AnnotationSample {
 		LOGGER.info("request POST");
 	}
 	
-	@Route(value = "/post", method = HttpMethod.GET)
-	public String test() {
-		return "test.jsp";
-	}
-	
-	@Route("/rock/:id")
-	public void rock2() {
-		LOGGER.info("request rock2");
-	}
-	
 	@Route("/users/:name")
-	public void users(Request request, Response response) {
-		
-		LOGGER.info("request users");
+	public String users(Request request, Response response) {
 		
 		String name = request.param("name");
 		
+		LOGGER.info("request users");
 		LOGGER.info("param name = {}", name);
-		
 		request.attribute("name", name);
-		response.render("/users.jsp");
+		return "/users.jsp";
 	}
-
+	
 	@Route("/index")
-	public void index(Request request, Response response) {
+	public ModelAndView index(Request request, Response response) {
 		
 		userService.sayHello();
 		
 		ModelAndView modelAndView = new ModelAndView("index.jsp");
 		modelAndView.add("name", "jack");
-		
 		LOGGER.info("param test = {}", request.queryAsInt("test"));
 		
-		response.render(modelAndView);
+		return modelAndView;
 	}
 	
-	
 	@Route("/you/:username")
-	public void you(Request request, Response response) {
+	public ModelAndView you(Request request, Response response) {
 		ModelAndView modelAndView = new ModelAndView("you.html");
 		modelAndView.add("username", request.param("username"));
-		response.render(modelAndView);
+		return modelAndView;
 	}
 	
 }

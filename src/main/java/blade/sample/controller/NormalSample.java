@@ -13,10 +13,10 @@ public class NormalSample {
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(NormalSample.class);
 	
-	public String hello(Response response, Request request){
+	public void hello(Response response, Request request){
 		LOGGER.info("进入hello~");
 		request.attribute("name", "rose baby");
-		return "hi";
+		response.text("hi");
 	}
 	
 	public void saveUser(Request request, Response response){
@@ -30,7 +30,6 @@ public class NormalSample {
 		JSONObject res = new JSONObject();
 		res.put("status", 200);
 		response.json(res.toString());
-		
 	}
 	
 	public void deleteUser(Request request, Response response){
