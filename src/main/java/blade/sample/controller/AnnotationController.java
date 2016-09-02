@@ -14,6 +14,9 @@ import com.blade.web.http.Request;
 
 import blade.sample.service.UserService;
 
+/**
+ * web开发推荐的方式
+ */
 @Controller
 public class AnnotationController {
 	
