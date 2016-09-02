@@ -38,14 +38,19 @@
 			<artifactId>blade-embed-jetty</artifactId>
 			<version>0.0.4</version>
 		</dependency>
-		
+
 		<!-- jsp引擎支持 -->
-		 <dependency>
-		    <groupId>org.eclipse.jetty</groupId>
-		    <artifactId>jetty-jsp</artifactId>
-		    <version>9.2.12.v20150709</version>
-		</dependency> 
-						
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-jsp</artifactId>
+			<version>9.2.12.v20150709</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty.toolchain</groupId>
+			<artifactId>jetty-jsp-jdt</artifactId>
+			<version>2.3.3</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -78,10 +83,21 @@
 									<mainClass>blade.sample.Application</mainClass>
 								</transformer>
 							</transformers>
+							<filters>
+								<filter>
+									<artifact>*:*</artifact>
+									<excludes>
+										<exclude>META-INF/*.SF</exclude>
+										<exclude>META-INF/*.DSA</exclude>
+										<exclude>META-INF/*.RSA</exclude>
+									</excludes>
+								</filter>
+							</filters>
 						</configuration>
 					</execution>
 				</executions>
 			</plugin>
 		</plugins>
 	</build>
+	
 </project>

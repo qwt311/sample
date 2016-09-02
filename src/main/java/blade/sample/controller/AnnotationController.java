@@ -32,26 +32,15 @@ public class AnnotationController {
 		LOGGER.info("request users");
 		LOGGER.info("param name = {}", name);
 		request.attribute("name", name);
-		return "/users.jsp";
+		return "users";
 	}
 	
 	@Route({"/", "index"})
 	public ModelAndView index(ModelAndView mav, @RequestParam int age) {
-		
 		LOGGER.info("request query age = {}", age);
-		
 		userService.sayHello();
-		
 		mav.add("name", "jack");
-		mav.setView("index.jsp");
-		
-		return mav;
-	}
-	
-	@Route("you/:username")
-	public ModelAndView you(ModelAndView mav, @PathVariable String username) {
-		mav.add("username", username);
-		mav.setView("you.html");
+		mav.setView("index");
 		return mav;
 	}
 	

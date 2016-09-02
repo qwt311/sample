@@ -34,7 +34,7 @@ public class RouteConfig implements BaseConfig {
 				System.out.println("come get!!!");
 				System.out.println("name = " + request.query("name"));
 				request.attribute("base", request.contextPath());
-				response.render("get");
+				response.render("get.jsp");
 			}
 		});
 	}

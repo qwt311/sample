@@ -26,11 +26,11 @@ public class NormalController {
 		// test request.model()
 		Person person = request.model("person", Person.class);
 		System.out.println(person);
-				
+		
 		// save操作
 		JSONObject res = new JSONObject();
 		res.put("status", 200);
-		response.json(res.toString());
+		response.json(res);
 	}
 	
 	public void deleteUser(Request request, Response response){
@@ -42,9 +42,7 @@ public class NormalController {
 	}
 	
 	public void saveImg(Request request, Response response){
-		
 		LOGGER.info("进入saveImg~");
-		
 		FileItem[] fileItems = request.files();
 		if(null != fileItems && fileItems.length > 0){
 			FileItem fileItem = fileItems[0];
