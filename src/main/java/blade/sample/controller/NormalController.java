@@ -1,17 +1,18 @@
 package blade.sample.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.blade.kit.json.JSONObject;
 import com.blade.web.http.Request;
 import com.blade.web.http.Response;
 import com.blade.web.multipart.FileItem;
 
-import blade.kit.json.JSONObject;
-import blade.kit.logging.Logger;
-import blade.kit.logging.LoggerFactory;
 import blade.sample.model.Person;
 
-public class NormalSample {
+public class NormalController {
 	
-	private static final Logger LOGGER = LoggerFactory.getLogger(NormalSample.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(NormalController.class);
 	
 	public void hello(Response response, Request request){
 		LOGGER.info("进入hello~");
@@ -37,7 +38,7 @@ public class NormalSample {
 		// delete操作
 		JSONObject res = new JSONObject();
 		res.put("status", 200);
-		response.json(res.toString());
+		response.json(res);
 	}
 	
 	public void saveImg(Request request, Response response){

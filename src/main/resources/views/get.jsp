@@ -7,6 +7,6 @@
 </head>
 <body>
 <h2>get get!</h2>
-<img src="${base}/static/img/aaa.jpg"/>
+<img src="/static/img/aaa.jpg"/>
 </body>
 </html>

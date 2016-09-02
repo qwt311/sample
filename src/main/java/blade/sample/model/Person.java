@@ -13,7 +13,13 @@ public class Person implements Serializable {
 	private Date birthday;
 	
 	public Person() {
-		// TODO Auto-generated constructor stub
+	}
+	
+	public Person(Integer pid, String user_name, Long allcount, Date birthday) {
+		this.pid = pid;
+		this.user_name = user_name;
+		this.allcount = allcount;
+		this.birthday = birthday;
 	}
 
 	public Integer getPid() {
