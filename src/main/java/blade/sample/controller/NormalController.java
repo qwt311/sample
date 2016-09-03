@@ -2,11 +2,10 @@ package blade.sample.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import com.blade.kit.json.JSONObject;
-import com.blade.web.http.Request;
-import com.blade.web.http.Response;
-import com.blade.web.multipart.FileItem;
+import com.blade.mvc.http.Request;
+import com.blade.mvc.http.Response;
+import com.blade.mvc.multipart.FileItem;
 
 import blade.sample.model.Person;
 

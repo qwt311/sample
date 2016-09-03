@@ -8,9 +8,9 @@ import com.blade.annotation.PathVariable;
 import com.blade.annotation.RequestParam;
 import com.blade.annotation.Route;
 import com.blade.ioc.annotation.Inject;
-import com.blade.view.ModelAndView;
-import com.blade.web.http.HttpMethod;
-import com.blade.web.http.Request;
+import com.blade.mvc.http.HttpMethod;
+import com.blade.mvc.http.Request;
+import com.blade.mvc.view.ModelAndView;
 
 import blade.sample.service.UserService;
 

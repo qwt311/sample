@@ -5,12 +5,12 @@ import static com.blade.Blade.$;
 import com.blade.config.ApplicationConfig;
 import com.blade.config.BaseConfig;
 import com.blade.ioc.annotation.Component;
-import com.blade.route.RouteHandler;
-import com.blade.view.ViewSettings;
-import com.blade.view.template.JspEngine;
-import com.blade.web.http.HttpMethod;
-import com.blade.web.http.Request;
-import com.blade.web.http.Response;
+import com.blade.mvc.http.HttpMethod;
+import com.blade.mvc.http.Request;
+import com.blade.mvc.http.Response;
+import com.blade.mvc.route.RouteHandler;
+import com.blade.mvc.view.ViewSettings;
+import com.blade.mvc.view.template.VelocityTemplateEngine;
 
 import blade.sample.controller.NormalController;
 
@@ -20,7 +20,7 @@ public class RouteConfig implements BaseConfig {
 	@Override
 	public void config(ApplicationConfig applicationConfig) {
 		// 配置模板引擎
-		ViewSettings.$().templateEngine(new JspEngine());
+		ViewSettings.$().templateEngine(new VelocityTemplateEngine());
 		
 		// 函数式路由
 		$().route("/hello", NormalController.class, "hello");
@@ -34,7 +34,7 @@ public class RouteConfig implements BaseConfig {
 				System.out.println("come get!!!");
 				System.out.println("name = " + request.query("name"));
 				request.attribute("base", request.contextPath());
-				response.render("get.jsp");
+				response.render("get.vm");
 			}
 		});
 	}

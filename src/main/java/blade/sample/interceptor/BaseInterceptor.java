@@ -3,9 +3,9 @@ package blade.sample.interceptor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.blade.interceptor.Interceptor;
-import com.blade.web.http.Request;
-import com.blade.web.http.Response;
+import com.blade.mvc.http.Request;
+import com.blade.mvc.http.Response;
+import com.blade.mvc.interceptor.Interceptor;
 
 public class BaseInterceptor implements Interceptor {
 

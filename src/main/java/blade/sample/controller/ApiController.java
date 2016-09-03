@@ -6,7 +6,7 @@ import java.util.List;
 
 import com.blade.annotation.RestController;
 import com.blade.annotation.Route;
-import com.blade.web.http.HttpMethod;
+import com.blade.mvc.http.HttpMethod;
 
 import blade.sample.model.Person;
 
