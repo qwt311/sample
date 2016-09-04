@@ -3,11 +3,11 @@ package blade.sample.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.blade.annotation.Controller;
-import com.blade.annotation.PathVariable;
-import com.blade.annotation.RequestParam;
-import com.blade.annotation.Route;
 import com.blade.ioc.annotation.Inject;
+import com.blade.mvc.annotation.Controller;
+import com.blade.mvc.annotation.PathVariable;
+import com.blade.mvc.annotation.RequestParam;
+import com.blade.mvc.annotation.Route;
 import com.blade.mvc.http.HttpMethod;
 import com.blade.mvc.http.Request;
 import com.blade.mvc.view.ModelAndView;

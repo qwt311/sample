@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import com.blade.annotation.RestController;
-import com.blade.annotation.Route;
+import com.blade.mvc.annotation.RestController;
+import com.blade.mvc.annotation.Route;
 import com.blade.mvc.http.HttpMethod;
 
 import blade.sample.model.Person;
